@@ -1,0 +1,53 @@
+server:
+  port: 8088
+
+spring:
+  redis-ssl: false
+  application:
+    name: accommodation-company
+  datasource:
+#    url: jdbc:mysql://192.168.10.54:3306/test?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+#    username: ztx
+#    password: ztx123321
+    url: jdbc:mysql://127.0.0.1:3306/idea_test?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  # jpa
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#  安装本地es
+  elasticsearch:
+      uris: 192.168.10.14:9200
+
+
+
+  main:
+    allow-bean-definition-overriding: true
+
+  redis-auth:
+    database: 0
+    host: 192.168.10.14
+    port: 6379
+    password:
+    timeout: 5000
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mybatis-plus:
+  type-enums-package: com.chainboard.certbe.common.enums
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+
