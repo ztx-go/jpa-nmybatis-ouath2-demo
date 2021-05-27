@@ -12,7 +12,7 @@ import javax.persistence.*;
 @TableName(value = "person_test")//指定表名
 public class Person {
 
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     private String name;
@@ -26,10 +26,10 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, Integer age,String lastName) {
+    public Person(String name, Integer age, String lastName) {
         this.name = name;
         this.age = age;
-        this.lastName=lastName;
+        this.lastName = lastName;
     }
 
     @Override

@@ -11,9 +11,11 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class User implements UserDetails, Serializable {
 
+
+    private static final long serialVersionUID = -8386965073839116984L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -47,7 +49,6 @@ public class User implements UserDetails, Serializable {
     public void setAuthorities(List<Role> authorities) {
         this.authorities = authorities;
     }
-
 
 
     @Override

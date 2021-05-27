@@ -12,11 +12,11 @@ import javax.persistence.*;
 @Data
 //@Entity
 @Document(indexName = "student")
-@Table(name="student_es")
+@Table(name = "student_es")
 public class StudentES {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private String id;
 

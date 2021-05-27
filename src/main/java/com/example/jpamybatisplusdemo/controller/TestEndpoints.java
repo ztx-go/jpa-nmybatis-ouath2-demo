@@ -20,7 +20,7 @@ public class TestEndpoints {
     public String getOrder(@PathVariable String id) {
         //for debug
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String principal = (String)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String principal = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         System.out.println(principal);
         return "order id : " + id;
     }

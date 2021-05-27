@@ -7,10 +7,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 
-@Repository("StudentESRepository")
-public interface StudentESRepository extends ElasticsearchRepository<StudentES, String>
+//@Repository("StudentESRepository")
+//public interface StudentESRepository extends ElasticsearchRepository<StudentES, String>
 //        , JpaRepository<StudentES,String>,
 //        JpaSpecificationExecutor<StudentES>
-{
-
-}
+//{
+//
+//}

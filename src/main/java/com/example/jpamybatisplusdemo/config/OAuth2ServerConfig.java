@@ -94,8 +94,6 @@ public class OAuth2ServerConfig {
         }
 
 
-
-
         @Override
         public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
             //允许表单认证

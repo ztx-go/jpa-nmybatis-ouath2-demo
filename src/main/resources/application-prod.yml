@@ -1,10 +1,7 @@
-server:
-  port: 8088
-
 spring:
   redis-ssl: false
   application:
-    name: jpa-mybatis-demo
+    name: accommodation-company
   datasource:
     #    url: jdbc:mysql://192.168.10.54:3306/test?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
     #    username: ztx
@@ -51,6 +48,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
 
+# 去nacos中找相对应的配置，比如端口号（主yml中不能有端口号）
 nacos:
   # Nacos 配置中心的配置项，对应 NacosConfigProperties 配置类
   config:
@@ -58,20 +56,8 @@ nacos:
     bootstrap:
       enable: true # 是否开启 Nacos 配置预加载功能。默认为 false。
       log-enable: true # 是否开启 Nacos 支持日志级别的加载时机。默认为 false。
-    #    data-id: example # 使用的 Nacos 配置集的 dataId。
-    data-id: example-auto-refresh # 使用的 Nacos 配置集的 dataId。
+    data-id: example # 使用的 Nacos 配置集的 dataId。
     type: YAML # 使用的 Nacos 配置集的配置格式。默认为 PROPERTIES。
     group: DEFAULT_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP。
-    namespace: # 使用的 Nacos 的命名空间，默认为 null。
-    auto-refresh: true  #是否自动刷新，默认为false
+    namespace: dd7da6a4-3a8c-45d0-9a68-c830de1d8943 # 使用的 Nacos 的命名空间，默认为 null。
 
-  # Nacos 注册中心的配置项，对应 NacosDiscoveryProperties 配置类
-  discovery:
-    server-addr: 127.0.0.1:8848 # Nacos 服务器地址
-    auto-register: true # 是否自动注册到 Nacos 中。默认为 false。
-    namespace: # 使用的 Nacos 的命名空间，默认为 null。
-    register:
-      service-name: ${spring.application.name} # 注册到 Nacos 的服务名
-      group-name: DEFAULT_GROUP # 使用的 Nacos 服务分组，默认为 DEFAULT_GROUP。
-      cluster-name: # 集群名，默认为空。
-#  目前感觉，在 Spring Boot 项目中使用 Nacos 作为注册中心，貌似场景并不多。

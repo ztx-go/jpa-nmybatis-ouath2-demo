@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository("studentRepository")
-public interface StudentRepository extends JpaRepository<Student, Integer>, JpaSpecificationExecutor<Student>{
+public interface StudentRepository extends JpaRepository<Student, Integer>, JpaSpecificationExecutor<Student> {
 
 //    SpringBoot2.0之后，之前使用的findOne()方法的替代方法findById()方法的使用
 //        Optional<T> findOne(@Nullable Specification<T> var1);
